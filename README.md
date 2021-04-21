@@ -1,15 +1,15 @@
 # Azure App Service Client IP
 
-## Obtaining the client ip in App Services
+## 1.0 Obtaining the client ip in App Services
 
-## Application Insights
+## 1.1 Application Insights
 
 - [Disable IP masking](https://docs.microsoft.com/es-mx/azure/aks/concepts-scale)
 - "DisableIpMasking": true
 
-## Manual using a Handler
+## 1.2 Manual using a Handler
 
-### .Net Core Code
+### 1.2.1 - .Net Core Code
 
 ```c#
 using Microsoft.AspNetCore.Builder;
@@ -89,13 +89,13 @@ namespace SampleApi
 }
 ```
 
-### Important code considerations
+### 1.2.3 - Important code considerations
 
 > ```req.Request.HttpContext.Connection.RemoteIpAddress```: gets the internal load balancer IP
 
 > ```X-Client-IP Header```: The actual external IP address
 
-### Results
+### 1.2.4 - Results
 
 ```text
 Path: /weatherforecast Method: GET Client IP: ::ffff:172.16.0.1 Headers: Cache-Control:max-age=0
