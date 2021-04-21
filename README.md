@@ -72,7 +72,7 @@ namespace SampleApi
                 var sb = new StringBuilder();
                 foreach(var header in req.Request.Headers)
                 {
-                    sb.AppendLine($"{header.Key}-{header.Value}");
+                    sb.AppendLine($"{header.Key} : {header.Value}");
                 }
                 var requestInformation = $"Path: {req.Request.Path} Method: {req.Request.Method} Client IP: {req.Request.HttpContext.Connection.RemoteIpAddress} Headers: {sb}\n";
                 logger.LogInformation(requestInformation);
