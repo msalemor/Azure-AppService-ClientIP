@@ -67,6 +67,7 @@ namespace SampleApi
 
             app.UseAuthorization();
 
+            // Middleware to capture the client IP
             app.Use((req, next) =>
             {
                 var sb = new StringBuilder();
