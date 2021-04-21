@@ -9,6 +9,7 @@
 
 ## Manual using a Handler
 
+### Code
 
 ```c#
 using Microsoft.AspNetCore.Builder;
@@ -85,4 +86,36 @@ namespace SampleApi
         }
     }
 }
+```
+
+### Results
+
+```text
+Path: /weatherforecast Method: GET Client IP: ::ffff:172.16.0.1 Headers: Cache-Control-max-age=0
+Connection-Keep-Alive
+Accept-text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding-gzip, deflate, br
+Accept-Language-en-US,en;q=0.9,es-MX;q=0.8,es;q=0.7
+Host-alemorclientip.azurewebsites.net
+Max-Forwards-10
+User-Agent-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36 Edg/89.0.774.77
+Upgrade-Insecure-Requests-1
+X-Client-IP-76.203.170.106
+X-Client-Port-60718
+Sec-Fetch-Site-none
+Sec-Fetch-Mode-navigate
+Sec-Fetch-User-?1
+Sec-Fetch-Dest-document
+X-WAWS-Unencoded-URL-/weatherforecast
+CLIENT-IP-76.203.170.106:60718
+X-ARR-LOG-ID-bef66f2f-b1e2-4632-9531-7266984aa116
+DISGUISED-HOST-alemorclientip.azurewebsites.net
+X-SITE-DEPLOYMENT-ID-alemorclientip
+WAS-DEFAULT-HOSTNAME-alemorclientip.azurewebsites.net
+X-Original-URL-/weatherforecast
+X-Forwarded-For-76.203.170.106:60718
+X-ARR-SSL-2048|256|C=US, O=Microsoft Corporation, CN=Microsoft RSA TLS CA 01|CN=*.azurewebsites.net
+X-Forwarded-Proto-https
+X-AppService-Proto-https
+X-Forwarded-TlsVersion-1.2
 ```
