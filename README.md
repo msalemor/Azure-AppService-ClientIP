@@ -9,7 +9,7 @@
 
 ## Manual using a Handler
 
-### Code
+### .Net Core Code
 
 ```c#
 using Microsoft.AspNetCore.Builder;
