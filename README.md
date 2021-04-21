@@ -89,6 +89,12 @@ namespace SampleApi
 }
 ```
 
+### Important code considerations
+
+> ```req.Request.HttpContext.Connection.RemoteIpAddress```: gets the internal load balancer IP
+
+> ```X-Client-IP Header```: The actual external IP address
+
 ### Results
 
 ```text
@@ -122,3 +128,4 @@ X-Forwarded-Proto:https
 X-AppService-Proto:https
 X-Forwarded-TlsVersion:1.2
 ```
+
