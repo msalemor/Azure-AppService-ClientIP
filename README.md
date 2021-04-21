@@ -70,12 +70,16 @@ namespace SampleApi
             // Middleware to capture the client IP
             app.Use((req, next) =>
             {
+                // Get all the available headers
+                // the headers carry the client ip information
                 var sb = new StringBuilder();
                 foreach(var header in req.Request.Headers)
                 {
                     sb.AppendLine($"{header.Key} : {header.Value}");
                 }
+                // Build the output
                 var requestInformation = $"Path: {req.Request.Path} Method: {req.Request.Method} Client IP: {req.Request.HttpContext.Connection.RemoteIpAddress} Headers: {sb}\n";
+                // Log the output
                 logger.LogInformation(requestInformation);
                 return next();
             });
