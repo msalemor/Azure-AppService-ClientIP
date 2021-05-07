@@ -1,15 +1,25 @@
 # Azure App Service Client IP
 
-## 1.0 Obtaining the client ip in App Services
+## 1.0 Problem statement and object
 
-## 1.1 Application Insights
+### 1.1 Problem Statement
+
+A program needs to log the client IP of all requests coming to an App Service or App Service Environmnent. Apps running in App Services are hosted behind a reverse proxy that is acting as a load balancer. When trying to log the client IP the IP is not the actual client IP but that of the load balancer.
+
+### 1.2 Objective
+
+How to obtain the actual client IP.
+
+### 2.0 Obtaining the client ip in App Services
+
+## 2.1 Application Insights
 
 - [Disable IP masking](https://docs.microsoft.com/es-mx/azure/aks/concepts-scale)
 - "DisableIpMasking": true
 
-## 1.2 Manual using a Handler
+## 2.2 Manual using a Handler
 
-### 1.2.1 - .Net Core Code
+### 2.2.1 - .Net Core Code
 
 ```c#
 using Microsoft.AspNetCore.Builder;
@@ -93,13 +103,13 @@ namespace SampleApi
 }
 ```
 
-### 1.2.3 - Important code considerations
+### 2.2.3 - Important code considerations
 
 > ```req.Request.HttpContext.Connection.RemoteIpAddress```: gets the internal load balancer IP
 
 > ```X-Client-IP Header```: The actual external IP address
 
-### 1.2.4 - Results
+### 2.2.4 - Results
 
 ```text
 Path: /weatherforecast Method: GET Client IP: ::ffff:172.16.0.1 Headers: Cache-Control:max-age=0
