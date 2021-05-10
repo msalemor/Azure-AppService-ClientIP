@@ -1,6 +1,6 @@
-# Azure App Service Client IP
+# Azure App Service - Get the Client IP Address
 
-## 1.0 Problem statement and object
+## 1.0 Problem statement and objective
 
 ### 1.1 Problem Statement
 
